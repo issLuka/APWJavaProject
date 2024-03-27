@@ -1,0 +1,29 @@
+Emilio Ince, Lorenzo Tomasello, Louis Faunce, Tyler Roeder
+APW: Java Script
+Professor Levy
+27 March 2024
+
+Design: Models, Views, and Controls
+
+
+Models:
+Accounts
+Name of user
+(MAYBE) Password for user
+Leaderboard scores 
+Number of times a user played each game
+Average score/time
+Top score/time
+Global leaderboard (To show all users and their top scores and average scores)
+
+Views:
+
+
+
+Controls:
+
+
+
+Flowchart:
+
+
