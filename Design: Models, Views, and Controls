@@ -8,22 +8,47 @@ Design: Models, Views, and Controls
 
 Models:
 Accounts
-Name of user
-(MAYBE) Password for user
+Name of user (Three Letters)
+
 Leaderboard scores 
 Number of times a user played each game
 Average score/time
 Top score/time
 Global leaderboard (To show all users and their top scores and average scores)
 
+Whos That Pokemon
+Guess the pokemon by its silhouette
+Has a leaderboard
+Is timed
+Each Correct guess gives a point
+Cant progress unless its correct
+
+4x4 memory game (Thermite)
+Lights up some of the tiles in the 4x4 cube
+Then lit up tiles go dark
+Recreate the pattern shown.
+Has leaderboard
+Points per tiles guessed correctly
+
 Views:
+Main page with links
+Multiple game preview links
+Login page (maybe)
+Leaderboard will display top scores and usernames
 
 
 
 Controls:
+Main page with login included with a picture and description of the game. 
+Three letter username (arcade style) 
 
 
 
 Flowchart:
+
+two images on the main page, one for each game with an active leaderboard under image preview
+-clicking log in will prompt upon clicking the game to add users score to leaderboard
+-after entering name (size: 3-4 letters like an arcade game) it will lead to start game screen
+if user enters name too short or too large it will not allow user to enter and highlight prompting the reason (too large or too small)
 
 
