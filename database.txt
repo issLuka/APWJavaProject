@@ -1,0 +1,16 @@
+{
+    username:   "name",
+    scores: {
+            pokemonGame:{
+                highScore: #,
+                timesPlayed: #,
+                highStreak: #
+                }
+
+            thermiteGame:{
+                highScore: #,
+                timesPlayed: #,
+                highStreak: #
+                }
+            }
+}
