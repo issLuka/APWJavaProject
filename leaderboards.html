@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
+    <title>Leaderboards</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Leaderboards</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game1.html">Game 1</a></li>
+                <li><a href="game2.html">Game 2</a></li>
+                <li><a href="leaderboards.html">Leaderboards</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="leaderboard">
+            <h2>Leaderboard for Game 1</h2>
+            <table id="game1-leaderboard">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Times Played</th>
+                        <th>Win Streak</th>
+                        <th>Average Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Leaderboard data for Game 1 will be dynamically populated here -->
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="leaderboard">
+            <h2>Leaderboard for Game 2</h2>
+            <table id="game2-leaderboard">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Times Played</th>
+                        <th>Wins</th>
+                        <th>Average # Moves</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Leaderboard data for Game 2 will be dynamically populated here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
 </body>
 </html>
