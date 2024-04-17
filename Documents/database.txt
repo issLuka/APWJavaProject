@@ -13,4 +13,10 @@
                 highStreak: #
                 }
             }
+
+    pokemon: {
+            pmanName: ,
+            pmanImg: ,
+    }
+
 }
