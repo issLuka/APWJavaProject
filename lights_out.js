@@ -14,6 +14,10 @@ function toggleCell(x, y) {
     toggleAdjacent(x, y + 1);
     toggleAdjacent(x - 1, y);
     toggleAdjacent(x + 1, y);
+    if (!document.getElementById('winMessage').style.display) {
+        // Update moves count display only if the game is not won yet
+        document.getElementById('moves').textContent = playerMoves;
+    }
     checkWin(); // Check if the game is won after each move
 }
 
@@ -53,6 +57,8 @@ function generateSolvablePuzzle() {
         toggleCell(x, y);
         moveHistory.push({ x, y }); // Record the move
     }
+    // Reset playerMoves after generating the puzzle
+    playerMoves = 0;
 }
 
 // Function to reset the grid to its initial state
@@ -98,8 +104,10 @@ document.getElementById('grid').addEventListener('click', (event) => {
     if (target.classList.contains('cell')) {
         const [x, y] = target.id.split('-').map(Number);
         toggleCell(x, y);
+        document.getElementById('moves').textContent = playerMoves; // Update moves count display
     }
 });
+
 
 // Initialize the reset button click event listener
 document.getElementById('resetBtn').addEventListener('click', resetGame);
