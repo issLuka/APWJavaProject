@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Game 1</h1>
+        <h1>Who's That Pokemon?</h1>
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -19,9 +19,17 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <!-- Game 1 content here -->
-    </main>
-</body>
+    <body>
+        <div class="container">
+            <h1>Who's That Pokemon?</h1>
+            <div id="pokemonImage"></div>
+            <input type="text" id="guessInput" placeholder="Enter the Pokemon's name">
+            <button onclick="checkGuess()">Guess</button>
+            <p id="result"></p>
+            <p id="score">Score: 0</p>
+            <button id="restartBtn" style="display: none;" onclick="restartGame()">Restart</button>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>
  
