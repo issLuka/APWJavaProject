@@ -20,12 +20,18 @@
         </nav>
     </header>
     <main>
-        <h1>Lights Out Game</h1>
-        <div class="grid" id="grid"></div>
-    
-        <p>Moves: <span id="moves">0</span></p>
-    
-        <script src="lights_out.js"></script>
+        <div class="center">
+            <h2>Lights Out Game</h2>
+            <div class="grid" id="grid"></div>
+            <p>Moves: <span id="moves">0</span></p>
+            <p id="winMessage" style="display: none;">Congratulations! You won!</p>
+            <p id="moveCount" style="display: none;"></p>
+            <input type="text" id="playerName" style="display: none;" placeholder="Enter your name">
+            <button id="saveScoreBtn" style="display: none;">Save Score</button>
+            <br/>
+            <button id="resetBtn">Generate Puzzle</button>
+        </div>
     </main>
+    <script src="lights_out.js"></script>
 </body>
 </html>

@@ -1,19 +1,42 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
+// MongoDB connection URI
+const mongoURI = "mongodb://localhost:27017"; // Replace with your MongoDB connection string
+
+// MongoDB client
+const mongoClient = new MongoClient(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Connect to MongoDB using Mongoose
+mongoose.connect('mongodb://localhost:27017/game_scores', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('Error connecting to MongoDB:', err));
+
+// Define MongoDB schema and model for the game scores
+const scoreSchema = new mongoose.Schema({
+    playerName: String,
+    gameName: String,
+    score: Number
+});
+
+const Score = mongoose.model('Score', scoreSchema);
+
+// Middleware
 app.use(bodyParser.json());
 
-const uri = "mongodb://localhost:27017"; // Replace with your MongoDB connection string
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
+// Route to fetch random Pokemon
 app.get('/random-pokemon', async (req, res) => {
     try {
-        await client.connect();
-        const db = client.db('pokemonDB'); // Replace 'pokemonDB' with your database name
+        await mongoClient.connect();
+        const db = mongoClient.db('pokemonDB'); // Replace 'pokemonDB' with your database name
         const collection = db.collection('pokemon'); // Replace 'pokemon' with your collection name
 
         // Count the number of documents in the collection
@@ -35,16 +58,17 @@ app.get('/random-pokemon', async (req, res) => {
         console.error('Error fetching random Pokemon:', error);
         res.sendStatus(500);
     } finally {
-        await client.close();
+        await mongoClient.close();
     }
 });
 
+// Route to submit scores for games
 app.post('/submit-score', async (req, res) => {
     const { username, score } = req.body;
 
     try {
-        await client.connect();
-        const db = client.db('pokemonDB'); // Replace 'pokemonDB' with your database name
+        await mongoClient.connect();
+        const db = mongoClient.db('pokemonDB'); // Replace 'pokemonDB' with your database name
         const leaderboardCollection = db.collection('leaderboard'); // Replace 'leaderboard' with your collection name
 
         const leaderboardEntry = {
@@ -59,12 +83,28 @@ app.post('/submit-score', async (req, res) => {
         console.error('Error adding leaderboard entry:', error);
         res.sendStatus(500);
     } finally {
-        await client.close();
+        await mongoClient.close();
     }
 });
 
+// Route to save scores for games
+app.post('/saveScore', async (req, res) => {
+    const { playerName, gameName, score } = req.body;
+
+    try {
+        const newScore = new Score({ playerName, gameName, score });
+        await newScore.save();
+        res.status(200).send('Score saved successfully!');
+    } catch (error) {
+        console.error('Error saving score:', error);
+        res.status(500).send('Failed to save score. Please try again later.');
+    }
+});
+
+// Serve static files
 app.use(express.static('public'));
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
