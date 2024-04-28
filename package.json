@@ -1,0 +1,11 @@
+{
+  "author": "Louis Faunce, Lorenzo Tomasello, Tyler Roeder, Emilio Ince",
+  "name": "Web-Game",
+  "version": "0.0.1",
+  "description": "Webapp with two games with active leaderboards and usernames",
+  "main": "",
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
