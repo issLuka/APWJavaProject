@@ -1,0 +1,41 @@
+.container {
+    text-align: center;
+}
+
+.splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.groups {
+    display: grid;
+    grid-template-columns: repeat(7, 50px); /* Adjust the width of each column as needed */
+    grid-gap: 5px 5px; /* Adjust the gap between rows and columns */
+    justify-content: center;
+}
+
+.group {
+    background-color: lightgray;
+    cursor: pointer;
+    width: 50px; /* Adjust the width of each grid cell to match the column width */
+    height: 50px; /* Adjust the height of each grid cell to match the width */
+}
+
+.group.good {
+    background-color: lightgreen;
+}
+
+.group.bad {
+    background-color: lightcoral;
+}
+
+.streaks {
+    margin-top: 20px;
+}
+
+.btn_start {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
