@@ -4,7 +4,11 @@
   "version": "0.0.1",
   "description": "Webapp with two games with active leaderboards and usernames",
   "main": "",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.3",
+    "package-lock.json": "^1.0.0"
+  },
   "engines": {
     "node": "*"
   }
