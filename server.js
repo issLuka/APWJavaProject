@@ -37,7 +37,7 @@ app.get('/random-pokemon', async (req, res) => {
     try {
         await mongoClient.connect();
         const db = mongoClient.db('pokeDB'); // Change to 'pokeDB'
-        const collection = db.collection('pokemon'); // Change to 'pokemon'
+        const collection = db.collection('pokeDB'); // Change to 'pokemon'
 
         // Count the number of documents in the collection
         const count = await collection.countDocuments();
@@ -69,7 +69,7 @@ app.post('/submit-score', async (req, res) => {
     try {
         await mongoClient.connect();
         const db = mongoClient.db('leaderBoardDB'); // Change to 'leaderBoardDB'
-        const leaderboardCollection = db.collection('leaderboard'); // Change to 'leaderboard'
+        const leaderboardCollection = db.collection('user'); // Change to 'leaderboard'
 
         const leaderboardEntry = {
             username: username,
