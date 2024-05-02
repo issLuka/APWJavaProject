@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Lights Out</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game1.html">Game 1</a></li>
+                <li><a href="game2.html">Game 2</a></li>
+                <li><a href="thermite.html">Game 3</a></li>
+                <li><a href="leaderboards.html">Leaderboards</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="center">
+            <h2>Lights Out Game</h2>
+            <div class="grid" id="grid"></div>
+            <p>Moves: <span id="moves">0</span></p>
+            <p id="winMessage" style="display: none;">Congratulations! You won!</p>
+            <p id="moveCount" style="display: none;"></p>
+            <input type="text" id="playerName" style="display: none;" placeholder="Enter your name">
+            <button id="saveScoreBtn" style="display: none;">Save Score</button>
+            <br/>
+            <button id="resetBtn">Generate Puzzle</button>
+        </div>
+    </main>
+    <script src="lights_out.js"></script>
+</body>
+</html>

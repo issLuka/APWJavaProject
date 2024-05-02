@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="thermiteStyles.css">
+</head>
+<body>            
+    <header>
+        <h1>Thermite</h1>
+        <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="game1.html">Game 1</a></li>
+                    <li><a href="game2.html">Game 2</a></li>
+                    <li><a href="thermite.html">Game 3</a></li>
+                    <li><a href="leaderboards.html">Leaderboards</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <div class="container">
+        <div class="splash">
+
+            <p>Select the speed:</p>
+            <div>
+                <label for="speed">Speed:</label>
+                <input type="range" id="speed" min="1" max="20" value="10">
+                <span class="speed_value">10s</span>
+            </div>
+            <div>
+                <span class="grid_value">7x7</span>
+            </div>
+            <button class="btn_start">Start Game</button>
+            <br/>
+            <button class="btn_next hidden">Next Puzzle</button> <!-- Added class 'hidden' -->
+        </div>
+        <div class="groups hidden"></div>
+        <div class="streaks">
+            <p>Streak: <span class="streak">0</span></p>
+            <p>Max Streak: <span class="max_streak">0</span></p>
+            <p>Best Time: <span class="best_time">99.999</span>s</p>
+            <p>Time: <span class="time">0.000</span>s</p>
+        </div>
+        <div class="lost_container hidden"> <!-- Added container for lost message -->
+            <p>You lost! Please enter your name:</p>
+            <input type="text" id="player_name">
+            <button id="save_score">Save Score</button>
+        </div>
+        <br/>
+        <button class="btn_again hidden">Play Again</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="thermite.js"></script>
+</body>
+</html>
