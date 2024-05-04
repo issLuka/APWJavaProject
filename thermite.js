@@ -1,3 +1,5 @@
+//Emilio Ince, Tyler Roeder
+
 let timer_start, timer_game, timer_finish, timer_time, good_positions, wrong, right, speed, timerStart, positions;
 let game_started = false;
 let streak = 0; // Initialize streak outside functions to persist its value
