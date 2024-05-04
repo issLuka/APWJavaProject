@@ -1,3 +1,5 @@
+//Tyler Roeder, Lorenzo Tomasello, Louis Faunce, Emilio Ince
+
 let score = 0;
 let currentPokemon = {};
 
